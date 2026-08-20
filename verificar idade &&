@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.print("Qual é sua idade? ");
+        int idade = teclado.nextInt();
+
+        System.out.println("Sua idade é : " + idade + "!");
+        
+
+        System.out.print("Possuí ingresso? ");
+        Boolean ingresso = teclado.nextBoolean();
+        System.out.println("Ingresso ? " + ingresso);
+        
+        if (idade >=18 && ingresso) { 
+            System.out.println("Pode entrar!");
+        }
+        else{            
+            System.out.println("Não pode entrar!");
+        }
+
+        teclado.close();
+    }
+}
