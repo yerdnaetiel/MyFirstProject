@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+
+        String adm = "admin";
+
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.print("Digite o usuário: ");
+        String usuario = teclado.next();
+
+        System.out.println("Digite a senha:");
+        int senha = teclado.nextInt();
+
+        if (usuario.equals(adm) && senha == 1234) { 
+            System.out.println("Acesso Permitido !");
+        }
+        else{            
+            System.out.println("Acesso Negado !");
+        }
+
+        teclado.close();
+    }
+}
