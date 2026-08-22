@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Help on:");
+        System.out.println("1. If");
+        System.out.println("2. Switch");
+        System.out.println("Choose one: ");
+
+      
+        char choice  = teclado.next().charAt(0); //chat at 0 serve pra pegar somente o primeiro caracter do next
+
+        switch (choice){
+            case '1':
+                System.out.println("The if: \n");
+                System.out.println("if(condition) statement;");
+                System.out.println("else statement;");
+                break;
+            case '2':
+                System.out.println("The switch: \n");
+                System.out.println("switch(expression) {");
+                System.out.println("case constant:");
+                System.out.println("statemente sequence");
+                System.out.println("break;");
+                System.out.println(" // ... ");
+                System.out.println("}");
+                break;
+                default:
+                    System.out.print("Selection not found.");
+        }
+        }
+    }
+
