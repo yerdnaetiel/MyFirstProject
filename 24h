@@ -1,0 +1,87 @@
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+
+        Scanner teclado = new Scanner(System.in);
+        double saldo = 1000;        
+        int opcao = 0;
+        double deposito = 0;
+        double saque = 0;
+
+
+        System.out.println("==== LOGIN ==== ");
+        System.out.println(" USUÁRIO: ");
+        String usuario = teclado.next();
+        System.out.println("PASSWORD:");
+        int password = teclado.nextInt();
+       
+    
+       if (usuario.equals("admin") && password == 1234) {
+         System.out.println(" LOGIN REALIZADO ! ");
+
+        while (opcao != 5) {
+            System.out.println("==== MENU ====");
+            System.out.println("1 - CONSULTAR SALDO");
+            System.out.println("2 - EXTRATO");
+            System.out.println("3 - DEPOSITAR");
+            System.out.println("4 - SACAR");
+            System.out.println("5 - SAIR");
+          
+            opcao = teclado.nextInt();
+
+         switch (opcao) {
+            
+            case 1:
+                System.out.println("SEU SALDO É : " + saldo);
+                break;
+            case 2:
+               
+                System.out.println(" RETIRE SEU EXTRATO : " + saldo);
+                System.out.println(" ULTIMO DEPOSITO : " + deposito);
+                System.out.println(" ULTIMO SAQUE : " + saque);
+                break;
+            case 3:
+                System.out.println("QUANTO DESEJA DEPOSITAR?");
+                deposito = teclado.nextDouble();
+                if (deposito > 0) {
+                    System.out.println("DEPOSITO REALIZADO COM SUCESSO \nRETIRE SEU COMPROVANTE !! ");
+                    saldo = deposito + saldo;    
+                }
+                else{
+                    System.out.println("VALOR INVALIDO, POR FAVOR COLOQUE VALOR POSITIVO");
+                }
+                break;
+
+            case 4:
+                System.out.println("QUAL O VALOR DO SAQUE?");
+                saque = teclado.nextDouble();
+                if(saque <= saldo && saque > 0){
+                    System.out.println("SAQUE AUTORIZADO ! ");
+                    
+                    saldo = saldo - saque;
+                 }
+                else{
+                    System.out.println("HOUVE UM ERRO, POR FAVOR TENTE NOVAMENTE !");
+                }
+                break;
+            
+            case 5:
+                System.out.println("ATÉ LOGO!!");    
+
+                break;
+            default:
+                System.out.println("COMANDO INVALIDO !!");
+                break;
+         }
+       } 
+
+       }
+       else{
+        System.out.println(" ACESSO NEGADO ! ");
+       }
+
+        teclado.close();
+        }
+    }
+
