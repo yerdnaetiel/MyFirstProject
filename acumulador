@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+
+        Scanner teclado = new Scanner(System.in);
+
+        int soma = 0;
+
+        System.out.print("DIGITE UM NÚMERO: ");
+        int numero = teclado.nextInt();
+
+        for (int i = 1; i <= numero; i++) {
+            soma = soma + i;
+        }
+
+        System.out.println("Soma = " + soma);
+
+        teclado.close();
+    }
+}
