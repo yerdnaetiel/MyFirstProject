@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        int[] numeros = {5, 4, 15, 29, 56};
+        int maior = numeros [0];
+        for(int i=1; i < numeros.length; i++){
+            if( numeros[i] > maior){
+                maior = numeros[i];
+            }
+        }
+        System.out.println("O numero maior é: " + maior);
+    }
+    }  
+
